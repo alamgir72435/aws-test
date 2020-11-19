@@ -1,8 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
-
+require('dotenv').config()
 const app = express()
-let uri = 'mongodb+srv://saif:saif@cluster0.szwmr.mongodb.net/awstest?retryWrites=true&w=majority'
+let uri = process.env.mongo_uri
 mongoose.connect(uri, {
     useNewUrlParser:true,
     useUnifiedTopology:true,
